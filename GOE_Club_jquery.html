@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOE | Shubham Sawant</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+	<body>
+		<header>
+			<div class="container">
+				<div id="branding">
+					<a href="index.html" target='_self'><span class="highlight">Goa</span>O<span class="highlight">n</span>Enfield</a>
+				</div>
+				<nav>
+				  <ul>
+					    <li ><a href="index.html" target='_self'>Home</a></li>
+						<li><a href="Wandering.html" target='_self'>Wandering</a></li>
+						<li><a href="Merch.html" target='_self'>Merch</a></li>
+						<li class="current"><a href="GOE_Club.html" target="_self">GOE Club</a></li>
+						<li><a href="ContactUs.html" target='_self'>Contact Us</a></li>
+				  </ul>
+				</nav>
+			</div>
+		</header>
+
+		<div id="showcase" >
+		<img src="./img/GOE_club.jpg" alt="Background" style="width:100%;height:100%;">
+		</div>
+
+		<section id="newsletter">
+			<div class="container">
+				<h1>Be A Member Of <span class="highlight">The GoaOnEnfield Club</span></h1>
+			</div>
+		</section>
+
+		<section id="boxes">
+            <div class="container">
+                <div class="registration">
+                    <h2>Lets Begin ::</h2>
+                    <form name="myForm"  >
+                        <label>First Name: </label><br><input type="text" id="fname" pattern="[A-Za-z]{1,12}" placeholder="First Name..." name="fname" required></input><br>
+                        <label>Last Name: </label><br><input type="text" id="lname"  pattern="[A-Za-z]{1,12}" placeholder="Last Name..." name="lname" required></input><br>
+                        <label>Date of Birth: </label><br><input type="date" id="dob" placeholder="dd/mm/yyyy..." min="1960-01-01" max="2020-12-31" name="dob" style="height:36px;border:none;"required> </input><br>
+                        <label>Email Address: </label><br><input type="text" id="email" pattern="[a-z0-9.]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email Address..." name="email" required></input><br>
+                        <label>Phone Number: </label><br><input type="text" id="phone" pattern="[0-9]{10}" placeholder="Phone Number..." name="phone" required></input><br>
+                        <input id="submit" type="button" value="Submit" onclick="validation()" style="background-color:#ff1818;text-align:center; font:13px/2.5 'verdana'; margin-top: 10px;height:40px;"></input>
+                        <input type="reset" value="Reset All" style="background-color:#0c0c0c;color: #fff;border-color: #fff; text-align:center; font:13px/2.5 'verdana'; margin-top: 10px;height:40px;"/>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border" >
+                <h2>Our <span class="highlight">Goa</span>On<span class="highlight">Enfield</span> Members</h2>
+            </div>
+
+            <div class="container">
+                <div class="view">
+                    <table id="table">
+                        <thead>
+                            <tr class="header">
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Date of Birth</th>
+                                <th>Email Address</th>
+                                <th>Phone Number</th>
+                                <th style="padding-left: 25px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="default1" id="rowFirst">
+                                <td>Shubham</td>
+                                <td>Sawant</td>
+                                <td>13-07-1997</td>
+                                <td>imshubham.here@gmail.com</td>
+                                <td>9049333138</td>
+                                <td><input class="delete" type="button"  onclick="deleteRow(1)" value="Delete"/>
+                                    <input class="edit" type="button"  onclick="edit(1)" value="Edit"/></td>
+                            </tr>
+                            <tr class="default2" id="rowSecond">
+                                <td>Shailesh</td>
+                                <td>Sawant</td>
+                                <td>22-10-1993</td>
+                                <td>imshailesh.here@gmail.com</td>
+                                <td>7066466985</td>
+                                <td><input class="delete" type="button"  onclick="deleteRow(2)" value="Delete"/>
+                                    <input class="edit" type="button"  onclick="edit(2)" value="Edit"/></td>
+                            
+                            </tr>
+                            <tr class="default3" id="rowSecond">
+                                <td>Shankar</td>
+                                <td>Sawant</td>
+                                <td>24-06-1961</td>
+                                <td>imshankar.here@gmail.com</td>
+                                <td>9404147985</td>
+                                <td><input class="delete" type="button"  onclick="deleteRow(3)" value="Delete"/>
+                                    <input class="edit" type="button"  onclick="edit(3)" value="Edit"/></td>
+                            </tr>
+                        </tbody>    
+                    </table>
+                </div>
+            </div> 
+        </section>
+        
+        <script type = "text/javascript">
+
+            function validation() { 
+                var fname = document.forms["myForm"]["fname"].value;
+                var lname = document.forms["myForm"]["lname"].value;
+                var dob = document.forms["myForm"]["dob"].value;
+                var email = document.forms["myForm"]["email"].value;
+                var phone = document.forms["myForm"]["phone"].value;
+
+                if (fname == "") { 
+                    alert("Please enter your First name."); 
+                    fname.focus(); 
+                    return false; 
+                } 
+                else if (lname == "") { 
+                    alert("Please enter your Last name."); 
+                    lname.focus(); 
+                    return false; 
+                } 
+                else if (dob == "") { 
+                    alert("Please enter a valid DOB."); 
+                    dob.focus(); 
+                    return false; 
+                } 
+                else if (email == "") { 
+                    alert("Please enter your Email"); 
+                    email.focus(); 
+                    return false; 
+                } 
+                else if (phone == "") { 
+                    alert("Please enter your telephone number."); 
+                    phone.focus(); 
+                    return false; 
+                } 
+                getInput(); 
+            }
+
+            function getInput(){
+                var fname = $("#fname").val();
+                var lname = $("#lname").val();
+                var dob = $("#dob").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+
+                var markup = "<tr><td>" + fname + "</td><td>" + lname + "</td><td>" + dob + "</td><td>" + email + "</td><td>" + phone + 
+                "</td><td><input class='delete' type='button'  onclick='deleteRow(4)'' value='Delete'/><input class='edit' type='button'  onclick='edit(1)' value='Edit'/></td></tr>";
+                $("#table").append(markup);
+                     
+                var table = document.getElementById("table");
+                var row = table.insertRow(temp);
+                currentAssigned = temp;
+                temp++;
+
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
+            
+                var fname = document.getElementById('fname').value;
+                var lname = document.getElementById('lname').value;
+                var dob   = document.getElementById  ('dob').value;
+                var email = document.getElementById('email').value;
+                var phone = document.getElementById('phone').value;
+
+                var element6 = document.createElement("input");  
+                element6.type = "button";  
+                var btnName = "row"; 
+                element6.name = btnName;  
+                element6.value = "Delete";
+                element6.style = "text-align:center; font:13px/2.5 'verdana'; width:64px;height:32px;border:2px solid  #0c0c0c;";
+                element6.onclick = function() {  
+                    deleteRow(currentAssigned);  
+                }
+
+                var element7 = document.createElement("input");  
+                element7.type = "button";  
+                var btnName = "row"; 
+                element7.name = btnName;  
+                element7.value = "Edit";
+                element7.style = "text-align:center; font:13px/2.5 'verdana'; width:64px;height:32px;border:2px solid  #0c0c0c;";
+
+                cell1.innerHTML =  fname;
+                cell2.innerHTML =  lname;
+                cell3.innerHTML =  dob;
+                cell4.innerHTML =  email;
+                cell5.innerHTML =  phone;
+                cell6.appendChild(element6);
+                cell6.appendChild(element7);  
+                resetAll();
+            }
+
+            function resetAll(){
+                document.getElementById('fname').value = '';
+                document.getElementById('lname').value = '';
+                document.getElementById('dob').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('phone').value = '';      
+            }
+            
+            function deleteRow(del_row){
+                document.getElementById("table").deleteRow(del_row);
+            }
+            
+            function edit(edit_row){
+                fname.focus();
+
+                document.getElementById
+
+                document.getElementById('fname').value = 'asd';
+                document.getElementById('lname').value = 'sv';
+                document.getElementById('dob').value = '12 /12 /2020';
+                document.getElementById('email').value = 'vsd@gmail.com';
+                document.getElementById('phone').value = '3672475555';
+            }
+        </script>           
+
+		<footer>
+			<a href= "https://www.instagram.com/im.shu13ham/" target='_blank'>Copyright 2020,<span class="highlight"> GOE | Shubham Sawant</span></a>
+		</footer>
+  </body>
+</html>
